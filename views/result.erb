@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spotify Sorter - Result</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background-color: #121212;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #282828;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    h1 { 
+      color: #1DB954; 
+      margin-bottom: 20px;
+    }
+    .success-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .playlist-info {
+      margin: 20px 0;
+      background-color: #333;
+      padding: 15px;
+      border-radius: 5px;
+      text-align: left;
+    }
+    .spotify-button {
+      background-color: #1DB954;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 15px;
+      width: 80%;
+    }
+    .home-button {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      width: 80%;
+    }
+    .accent {
+      color: #1DB954;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="success-icon">🎉</div>
+    <h1>Playlist Created!</h1>
+    
+    <p>Your playlist "<span class="accent"><%= @original_playlist_name %></span>" has been sorted by <span class="accent"><%= @sort_method %></span>.</p>
+    
+    <div class="playlist-info">
+      <p><strong>New playlist name:</strong> <%= @new_playlist_name %></p>
+      <p><strong>Tracks sorted:</strong> <%= @track_count %></p>
+    </div>
+    
+    <div>
+      <a href="<%= @new_playlist_url %>" class="spotify-button" target="_blank">
+        Open in Spotify
+      </a>
+      <br>
+      <a href="/" class="home-button">
+        Sort Another Playlist
+      </a>
+    </div>
+    
+    <div style="margin-top: 30px; font-size: 12px; color: #999;">
+      <p>Thank you for using Spotify Sorter</p>
+    </div>
+  </div>
+</body>
+</html>
